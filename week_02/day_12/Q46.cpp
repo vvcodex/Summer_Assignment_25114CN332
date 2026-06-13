@@ -1,0 +1,30 @@
+// Write a program to write a function to check whether a number is Armstrong.
+
+#include <iostream>
+using namespace std;
+
+bool isArmstrong(int n) {
+    int original = n, digit, sum = 0;
+
+    while (n > 0) {
+        digit = n % 10;
+        sum += digit * digit * digit;
+        n /= 10;
+    }
+
+    return original == sum;
+}
+
+int main() {
+    int num;
+
+    cout << "Enter a number: ";
+    cin >> num;
+
+    if (isArmstrong(num))
+        cout << num << " is an Armstrong Number.";
+    else
+        cout << num << " is not an Armstrong Number.";
+
+    return 0;
+}
